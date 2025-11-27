@@ -28,9 +28,14 @@ class Rectangle {
         return false;
     }
 
-    public String toString() {
-        for (int i = 0; i < this.width; i++) {
-
-        }
-    }
+//    public String toString() {
+//        String representation;
+//        StringBuilder sb = new StringBuilder();
+//        for (int i = 0; i < this.width; i++) {
+//            for (int j = 0; j < this.height; j++) {
+//
+//            }
+//        }
+//        representation = sb;
+//    }
 }

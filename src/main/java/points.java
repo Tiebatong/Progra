@@ -2,13 +2,13 @@ public class points {
     public static void main() {
 
 
-        Rectangle rec1 = new Rectangle(3, 5);
-        int fläche = rec1.area();
-        System.out.println(fläche);
-        int umfang = rec1.perimeter();
-        System.out.println(umfang);
-        boolean quadrat = rec1.isSquare();
-        System.out.println(quadrat);
+        Point2D p1 = new Point2D(2.4, 5.6);
+        Point2D p2 = new Point2D(3, 6.7);
+        Point2D p3 = p1.subtract(p2);
+
+        Point2D p4 = new Point2D(0, 1);
+        System.out.println(p4.radius());
+        System.out.println(p4.theta());
 
     }
 

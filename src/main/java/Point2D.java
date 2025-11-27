@@ -1,10 +1,12 @@
+import java.awt.*;
+
 class Point2D {
-    private double x;
-    private double y;
+    private final double x;
+    private final double y;
 
     Point2D(double x, double y) {
-        this.setX(x);
-        this.setY(y);
+        this.x = x;
+        this.y = y;
     }
 
     Point2D() {
@@ -16,23 +18,22 @@ class Point2D {
         System.out.println(this.x + "," + this.y);
     }
 
-    void subtract(Point2D other) {
-        this.x = this.x - other.x;
-        this.y = this.y - other.y;
+    public String toString() {
+        return x + " " + y;
     }
 
-    void setY (double newy) {
-        if(Double.isNaN(newy)) {
-            return;
-        }
-        this.y = newy;
+    Point2D subtract(Point2D other) {
+        double newX = this.x - other.x;
+        double newY = this.y - other.y;
+        return new Point2D(newX, newY);
     }
 
-    void setX (double newx) {
-        if(Double.isNaN(newx)) {
-            return;
-        }
-        this.x = newx;
+    Point2D setY (double newy) {
+        return new Point2D(this.x, newy);
+    }
+
+    Point2D setX (double newx) {
+        return new Point2D(newx, this.y);
     }
 
     double getX () {
@@ -41,5 +42,13 @@ class Point2D {
 
     double getY () {
         return this.y;
+    }
+
+    double radius() {
+        return Math.sqrt(this.x * this.x + this.y * this.y);
+    }
+
+    double theta() {
+        return Math.atan2(this.y, this.x);
     }
 }
