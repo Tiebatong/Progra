@@ -1,0 +1,3 @@
+enum Helmtyp {
+    HARTSCHALE, MIKROSCHALE;
+}

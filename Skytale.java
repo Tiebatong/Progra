@@ -1,68 +1,61 @@
-public class Skytale {
-    public static void main(String[] args) {
-        
-        // Input Validierung
-        boolean Error = false;
-        if (args.length != 2) {
+class Skytale {
+    static void main(String[] args) {
+        if(args[0].equals("D") != true && args[0].equals("E") != true || args[1].length() != 28 || args.length != 2) {
             System.out.println("ERROR");
-            return;
-        }
-        if (args[0].equals("E") || args[0].equals("D")) {
-            // kann leer gelassen werden, Fall wird von else überprüft
-        } else {
-            Error = true;
-        }
-        if (args[1].length() != 28) {
-            Error = true;
         }
 
-        // Fehler Ausgabe
-        if (Error) {
-            System.out.println("ERROR");
-        }
-        
+
         if (args[0].equals("E")) {
-            System.out.println(Verschlüsselung(args[1]));
+            System.out.println(verschlüsseln(toCharArray(args[1])));
         } else {
-            System.out.println(Entschlüsselung(args[1]));
+            System.out.println(entschlüsseln(args[1]));
+        }
+
+
+
+    }
+
+    static char[][] toCharArray(String input) {
+
+        char[][] array = new char[4][7];
+        
+        int counter = 0;
+
+        for (int i = 0; i < 4; i++) {
+            for(int j = 0; j < 7; j++) {
+                array[i][j] = input.charAt(counter);
+                counter++;
+            }
+        }
+        return array;
+    }
+
+    static String verschlüsseln(char[][] array) {
+        String verschlüsselt = "";
+
+        for (int i = 0; i < 7; i++) {
+            for (int j = 0; j < 4; j++) {
+                verschlüsselt += array[j][i];
+            }
+        }
+        return verschlüsselt;
+    }
+
+    static String entschlüsseln(String input) {
+        String entschlüsselt = "";
+
+        int index = 0;
+        int counter = 0;
+        for (int i = 0; i < 4; i++) {
+            
+            for(int j = 0; j < 7; j++) {
+                index = j * 4 + counter;
+                entschlüsselt += input.charAt(index);
+            }
+            counter++;
         }
         
+
+        return entschlüsselt;
     }
-
-    static String Verschlüsselung(String input) {
-
-        int n = 4;
-        int m = 7;
-        String Text_verschlüsselt = "";
-
-        for (int j = 0; j < m; j++) {     
-            for (int i = 0; i < n; i++) { 
-                int Index = i * 7 + j;
-                //System.out.println(Index);
-                //System.out.println(input.charAt(Index));
-                Text_verschlüsselt += input.charAt(Index);
-            }
-        }
-
-        return Text_verschlüsselt;
-    }
-
-    static String Entschlüsselung(String input) {
-
-        int n = 4;
-        int m = 7;
-        String Text_entschlüsselt = "";
-
-        for (int j = 0; j < m; j++) {     
-            for (int i = 0; i < n; i++) { 
-                int Index = i * 4;
-                System.out.println(Index);
-                
-            }
-        }
-
-        return Text_entschlüsselt;
- 
-    }
-    
 }

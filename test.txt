@@ -1,0 +1,88 @@
+public class Lernzettel {
+
+    static void main(String[] args) {
+
+        int a = 0;
+        int b = 0;
+        int[] arrayname = new int[4];
+        String string = "5";
+
+
+    //for schleife
+    for (int i = 0; i < 5; i++) {
+        //statmant wird 5 mal ausgeführt
+    }
+
+    // for each
+    for (int variablenname: arrayname) {
+            // wird so oft ausgeführt, wie array elemente hat
+    }
+    
+    //while schleife
+    while (a > b) {
+        //wird ausgeführt bis boolean expresseion false ist
+    }
+
+    //do while
+    do {
+        //expression wird mindestens einmal ausgeführt
+    } while (b != a); 
+
+    // parsing
+
+    int x = Integer.parseInt(string);
+
+    int c = args.length;      // keine Klammern
+    int d = args[1].length(); //Klammern
+
+
+    //Klassen haben Konstruktor, Instanzvariablen, (geter, seter)
+
+    class Rectangle {
+
+        private int width; //Instanzvariable
+        private int height; //Instanzvariable
+
+        Rectangle(int width, int height) { // Konstruktor
+
+            this.width = width;
+            this.height = height;
+        }
+
+        Rectangle() { // Konstruktor ohne Argumente
+            this.width = 0;
+            this.height = 0;
+        }
+    }
+
+    /* 
+    // interfaces setzen gewisse Methoden als Bedingung vorraus
+
+    Interface flyingObject {
+        
+        void move();  
+        // wer flyingObject implemetiert braucht zwingen move();
+    }
+
+    class Square implements flyingObject {
+
+        public void move();
+
+    }
+    
+
+    // vererbung
+    class Square extends flyingObject {
+
+        void Draw(); neue Methode von Suqare;
+        // Square hat auch die Methoden aus flyingObjects
+    
+        }
+
+
+    */
+
+    }
+
+
+}

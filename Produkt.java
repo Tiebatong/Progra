@@ -1,0 +1,3 @@
+interface Produkt {
+    int preis();
+}

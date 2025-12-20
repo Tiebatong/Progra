@@ -1,3 +1,3 @@
-public Record Location(int postcode, String country) {
+record Location(int postcode, String country){
 
 }

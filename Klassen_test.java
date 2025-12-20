@@ -1,20 +1,14 @@
 public class Klassen_test {
-    public static void main(String[] args) {
-        Rectangle rec = new Rectangle(7, 5);
-        Rectangle rec1 = new Rectangle();
+    static void main(String[] args) {
+        
 
+        Location l1 = new Location(40474, "Deutschland");
+            
+        
+        Letter b0 = new Letter(new Location(40474, "Deutschland"),new Location(45454, "Deutschland"));
 
-
-        SingleResistor r1 = new SingleResistor(100);
-        SingleResistor r2 = new SingleResistor(200);
-        SingleResistor r3 = new SingleResistor(300);
-
-        ParallelCircuit r23 = new ParallelCircuit(r2, r3);
-        SeriesCircuit r123 = new SeriesCircuit(r1, r23);
-
-        System.out.println(r123.resistance()); // 220.0
-        System.out.println(r123.resistorCount()); // 3
-
+        Parcel p0 = new Parcel(l1, new Location(12345, "Frankreich"), 89.0);
+        System.out.println(p0.weight());
     }
     
 }

@@ -1,0 +1,1 @@
+record Studi(String name, int MatrikelNummer) {}
