@@ -8,14 +8,20 @@ public class insertionSort {
             System.out.println(s);
         }
 
+        Studi s0 = new Studi("David", 22093);
+        Studi s1 = new Studi("Jan", 23456);
+        Studi s2 = new Studi("Hannes", 81734);       
+        Studi[] studiarr = {s0, s1, s2};
+        
+
     }
 
-    int[] insertSort(int[] toSort) {
+    private static int[] insertSort(int[] toSort) {
         int[] sorted = toSort;
 
         for (int i = 0; i < toSort.length; i++) {
-            for(int j = 0; j < i; j++) {
-                if(toSort[i] < sorted[j] ) {
+            for (int j = 0; j < i; j++) {
+                if (toSort[i] < sorted[j] ) {
                     int tmp = toSort[i];
                     toSort[i] = sorted[j];
                     sorted[j] = tmp;
@@ -25,4 +31,25 @@ public class insertionSort {
 
         return sorted;
     }
+
+    private static void insertSort(Studi[] objects) {
+
+        for (int i = 0; i < objects.length; i++) {
+            Studi currentObject = objects[i];
+            int insertionPosition = i;
+
+            while(insertionPosition > 0 && currentObject.MatrikelNummer() < objects[i - 1].MatrikelNummer()) {
+                objects[insertionPosition - 1] = objects[insertionPosition];
+                insertionPosition--;
+            }
+            
+        }
+
+
+
+
+
+    }
+
 }
+
