@@ -8,11 +8,16 @@ public class insertionSort {
             System.out.println(s);
         }
 
-        Studi s0 = new Studi("David", 22093);
+        Studi s0 = new Studi("David", 72093);
         Studi s1 = new Studi("Jan", 23456);
-        Studi s2 = new Studi("Hannes", 81734);       
-        Studi[] studiarr = {s0, s1, s2};
-        
+        Studi s2 = new Studi("Hannes", 81734);
+        Studi s3 = new Studi("Frank", 12);       
+        Studi[] studiarr = {s0, s1, s2, s3};
+        insertSort(studiarr);
+
+        for(Studi s: studiarr) {
+            System.out.println(s);
+        }
 
     }
 
@@ -39,15 +44,12 @@ public class insertionSort {
             int insertionPosition = i;
 
             while(insertionPosition > 0 && currentObject.MatrikelNummer() < objects[i - 1].MatrikelNummer()) {
-                objects[insertionPosition - 1] = objects[insertionPosition];
+                objects[insertionPosition] = objects[insertionPosition - 1];
                 insertionPosition--;
             }
-            
+            objects[insertionPosition] = currentObject;
+   
         }
-
-
-
-
 
     }
 
